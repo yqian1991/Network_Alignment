@@ -1,0 +1,27 @@
+/*
+ * auxilliary.cpp
+ *
+ *  Created on: May 6, 2014
+ *      Author: yqian33
+ */
+
+
+
+#include "auxilliary.h"
+#include "def.h"
+
+using namespace std;
+
+void statistic_known(string infile)
+{
+	ifstream input;
+	input.open("");
+
+	string line;
+
+	while( getline(input, line))
+	{
+		vector<string> stritem = split(line, "\t");
+
+	}
+}

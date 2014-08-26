@@ -1,0 +1,5 @@
+MODULES_MANAGER_V2
+org.__init__|/home/yqian33/workspace/PPIDataProcess/read4AlignMCL/src/org/__init__.py
+org.data.__init__|/home/yqian33/workspace/PPIDataProcess/read4AlignMCL/src/org/data/__init__.py
+org.data.read2nif|/home/yqian33/workspace/PPIDataProcess/read4AlignMCL/src/org/data/read2nif.py
+org.data.read2ort|/home/yqian33/workspace/PPIDataProcess/read4AlignMCL/src/org/data/read2ort.py

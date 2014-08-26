@@ -1,0 +1,42 @@
+/*
+ * Test.cpp
+ *
+ *  Created on: May 5, 2014
+ *      Author: yqian33
+ */
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "def.h"
+#include "auxilliary.h"
+
+using namespace std;
+
+int main(void)
+{
+
+	map <int, string> complexMap = map <int, string> ();
+	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/fly.txt";
+	//string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/testfly.txt";
+	if (buildComplexMap(infile, complexMap))
+	{
+		cout << "Known complexes map constructed！" <<endl;
+	}
+
+	map <int, string> proMap = map <int, string> ();
+	string infile1="/home/yqian33/APPI/software/AlignMCL-1.2/alignments/AlignMCL/fly.i2d-yeast.i2d.txt";
+	if (buildSolMap(infile1, proMap))
+	{
+		cout << "Solutions map constructed！" <<endl;
+	}
+	string outfile="/home/yqian33/workspace/PPIDataProcess/ResultEvaluation/fly-yeast-i2d_fly_overlap.txt";
+	string prefix="fly.i2d-yeast.i2d_yeast";
+	if (overlap_clean(proMap, complexMap, outfile, prefix))
+	{
+		cout << "Finished!"<<endl;
+	}
+	//statistic_known();
+}
+
+

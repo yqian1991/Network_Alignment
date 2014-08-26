@@ -1,0 +1,26 @@
+-- VERSION_4
+-- START DISKCACHE
+/home/yqian33/workspace/PPIDataProcess/.metadata/.plugins/org.eclipse.core.resources/.projects/read4AlignMCL/com.python.pydev.analysis/v2_indexcache
+org.__init__|1394642896000|/home/yqian33/workspace/PPIDataProcess/read4AlignMCL/src/org/__init__.py
+org.data.__init__|1394642896000|/home/yqian33/workspace/PPIDataProcess/read4AlignMCL/src/org/data/__init__.py
+org.data.read2nif|1395779920000|/home/yqian33/workspace/PPIDataProcess/read4AlignMCL/src/org/data/read2nif.py
+org.data.read2ort|1394658122000|/home/yqian33/workspace/PPIDataProcess/read4AlignMCL/src/org/data/read2ort.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+1=org.data.read2nif
+2=org.data.read2ort
+-- END DICTIONARY
+-- START TREE 1
+7
+dip|1|dip2nif!10@
+hip|1|hippie2nif!10@
+hpr|1|hprd2nif!10@
+i2d|1|i2d2nif!10@
+inp|1|inparanoid2ort!18@
+min|1|mintBiogrid2nif!10@
+tes|1|test!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

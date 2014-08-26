@@ -1,0 +1,9 @@
+MODULES_MANAGER_V2
+org.__init__|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/__init__.py
+org.blast.__init__|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/__init__.py
+org.blast.evalue.__init__|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/evalue/__init__.py
+org.blast.evalue.idmapping|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/evalue/idmapping.py
+org.blast.evalue.searchEvalue|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/evalue/searchEvalue.py
+org.blast.idmap.__init__|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/idmap/__init__.py
+org.blast.idmap.fly_idmap|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/idmap/fly_idmap.py
+org.blast.idmap.yeast_idmap|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/idmap/yeast_idmap.py

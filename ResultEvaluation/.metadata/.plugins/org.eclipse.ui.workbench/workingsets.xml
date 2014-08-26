@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1399296984887_1" label="ResultEvaluation" name="ResultEvaluation">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ResultEvaluation" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ResultPy" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1395165731225_0" label="Window Working Set" name="Aggregate for window 1395165731224"/>
+<mruList name="ResultEvaluation"/>
+</workingSetManager>

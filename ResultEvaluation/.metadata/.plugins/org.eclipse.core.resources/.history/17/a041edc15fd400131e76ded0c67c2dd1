@@ -1,0 +1,18 @@
+/*
+ * def.h
+ *
+ *  Created on: May 5, 2014
+ *      Author: yqian33
+ */
+
+#ifndef DEF_H_
+#define DEF_H_
+
+#include <vector>
+#include <hash_map>
+#include <string>
+
+map<int, string> proMap;
+
+
+#endif /* DEF_H_ */

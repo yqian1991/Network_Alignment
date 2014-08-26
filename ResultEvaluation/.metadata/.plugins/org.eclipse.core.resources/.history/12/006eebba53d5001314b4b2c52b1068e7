@@ -1,0 +1,18 @@
+/*
+ * main.cpp
+ *
+ *  Created on: May 5, 2014
+ *      Author: yqian33
+ */
+
+
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+	double s = (double) 4/7;
+	cout << (double) 4/7 << endl;
+}
+

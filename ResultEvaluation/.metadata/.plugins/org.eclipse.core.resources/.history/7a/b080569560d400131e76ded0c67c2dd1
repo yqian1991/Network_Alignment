@@ -1,0 +1,25 @@
+/*
+ * def.h
+ *
+ *  Created on: May 5, 2014
+ *      Author: yqian33
+ */
+
+#ifndef DEF_H_
+#define DEF_H_
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <string>
+#include <cstring>
+
+using namespace std;
+
+map <int, string> proMap;
+
+map buildProMap(string infile);
+
+
+#endif /* DEF_H_ */

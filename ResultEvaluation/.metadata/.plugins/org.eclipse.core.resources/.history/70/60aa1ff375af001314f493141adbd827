@@ -1,0 +1,17 @@
+
+
+1. Get protein Entrez ID from protein sequence file use - searchEvalue: def getEntrezIdFromSeq();    *_EntrezID.txt
+
+2. Use Entrez ID to search orthologs between two protein networks - DIPOT Web interface;
+
+3. Extract Entrez ID for two networks from the orthologs file - idmapping: def entrezorthlog();      *_Entrez_ID.txt
+
+4. Use the Entrez ID files to do id mapping with Uniprot AC   - Uniprot AC id mapping web interface; *_EntrezID_Uniprot.csv
+
+5. Clean the id mapping file to get valid ones    - idmapping: def cleanAfterMapping();          *_entrez2uniprot.txt
+
+6. Get the final orthologs file - PPIRepeatMask: entrez2uniprot(infile1, infile2, infile3, outfile);
+
+---------------------------------------------------------------------------------------------------------------------------------------
+6. Clean the id mapping file to remove repeat ones    - PPIRepeatMask: proteinMask(infile1, outfile1);        *_entrez2uniprot_new.txt
+

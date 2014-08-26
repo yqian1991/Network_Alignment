@@ -1,0 +1,10 @@
+MODULES_MANAGER_V2
+org.__init__|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/__init__.py
+org.alignmcl.Read2Nif|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/alignmcl/Read2Nif.py
+org.alignmcl.__init__|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/alignmcl/__init__.py
+org.graemlin.Read2Net|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/graemlin/Read2Net.py
+org.graemlin.__init__|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/graemlin/__init__.py
+org.mawish.__init__|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/mawish/__init__.py
+org.mawish.read2PPI|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/mawish/read2PPI.py
+org.networkblast.ReadInt|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/networkblast/ReadInt.py
+org.networkblast.__init__|/home/yqian33/workspace/PPIDataProcess/ReadPPI/src/org/networkblast/__init__.py

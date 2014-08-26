@@ -1,0 +1,47 @@
+-- VERSION_4
+-- START DISKCACHE
+/home/yqian33/workspace/PPIDataProcess/.metadata/.plugins/org.eclipse.core.resources/.projects/IDMapping/com.python.pydev.analysis/v2_indexcache
+org.yeast.YeastMap|1398435017000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/yeast/YeastMap.py
+org.human.__init__|1397233805000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/human/__init__.py
+org.human.HumanMap|1398106749000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/human/HumanMap.py
+org.mouse.__init__|1398203100000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/mouse/__init__.py
+org.fly.__init__|1397234176000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/fly/__init__.py
+org.__init__|1397064435000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/__init__.py
+org.worm.__init__|1397080846000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/worm/__init__.py
+org.worm.WormMap|1398434337000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/worm/WormMap.py
+org.mouse.MouseMap|1398203232000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/mouse/MouseMap.py
+org.fly.FlyMap|1398179458000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/fly/FlyMap.py
+org.yeast.__init__|1397064435000|/home/yqian33/workspace/PPIDataProcess/IDMapping/org/yeast/__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+7
+1=org.yeast.YeastMap
+5=org.human.HumanMap
+7=Protein.__init__
+2=org.worm.WormMap
+4=org.fly.FlyMap
+3=org.mouse.MouseMap
+6=Protein
+-- END DICTIONARY
+-- START TREE 1
+12
+exi|2|existed!10@existed!18@
+ext|2|extractIDFromDIPOT!10@extractIDFromDIPOT!18@
+fla|2|flag!11@flag!19@
+for|5|formatUniSeq!26@formatUniSeq!18@formatUniSeq!34@formatUniSeq!42@formatUniSeq!10@
+ide|2|idExisted!18@idExisted!10@
+idm|2|idmapping!18@idmapping!10@
+map|5|map!18@mapGid2Uac!34@mapGid2Uac!10@map!10@mapGid2Uac!18@
+num|2|num!19@num!11@
+po|2|po!11@po!19@
+pro|4|Protein!9@proteinMask!10@proteinMask!18@Protein!17@
+rep|2|repeatMask!18@repeatMask!10@
+sea|5|searchAC!10@searchMapFile!10@searchMapFile!18@searchMapFile!34@searchAC!18@
+-- END TREE
+-- START TREE 2
+4
+__d|2|__del__!6&10@__del__!6&18@
+__i|2|__init__!6&10@__init__!6&18@
+ent|2|entrezid!7&11@entrezid!7&19@
+uni|2|uniprotac!7&11@uniprotac!7&19@
+-- END TREE

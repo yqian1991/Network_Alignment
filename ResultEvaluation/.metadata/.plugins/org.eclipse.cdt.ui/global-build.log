@@ -1,0 +1,28 @@
+
+**** Build of configuration Debug for project ResultEvaluation ****
+
+make all 
+Building file: ../src/Test.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Test.d" -MT"src/Test.d" -o "src/Test.o" "../src/Test.cpp"
+Finished building: ../src/Test.cpp
+ 
+Building file: ../src/auxilliary.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/auxilliary.d" -MT"src/auxilliary.d" -o "src/auxilliary.o" "../src/auxilliary.cpp"
+Finished building: ../src/auxilliary.cpp
+ 
+Building file: ../src/def.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/def.d" -MT"src/def.d" -o "src/def.o" "../src/def.cpp"
+../src/def.cpp: In function ‘std::vector<std::basic_string<char> > split(std::string, std::string)’:
+../src/def.cpp:356:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+Finished building: ../src/def.cpp
+ 
+Building target: ResultEvaluation
+Invoking: GCC C++ Linker
+g++  -o "ResultEvaluation"  ./src/Test.o ./src/auxilliary.o ./src/def.o   
+Finished building target: ResultEvaluation
+ 
+
+**** Build Finished ****

@@ -1,0 +1,106 @@
+'''
+Created on Mar 12, 2014
+
+@author: yqian33
+'''
+    
+def proteinEvalue():
+    from Bio.Blast import NCBIWWW
+    from Bio.Blast import NCBIXML
+    from Bio import SeqIO
+    from Bio import AlignIO
+    
+    peptide = "tpdavmgnpk"
+    myEntrezQuery = "Homo sapiens[Organism]"
+    
+    record_handle = SeqIO.parse("/home/yqian33/APPI/dataset/ProteinSequences/seq1.fasta", "fasta")
+    for record in record_handle:
+        print record.seq
+        #/home/yqian33/Public/ncbi-blast-2.2.29+/db/uniprot-human_protein.fasta
+        result  = NCBIWWW.qblast("blastp", "/home/yqian33/Public/ncbi-blast-2.2.29+/db/SGD_orf_trans_all.fasta", record)
+        records = NCBIXML.parse(result)
+        print 'blast'
+        blast_record = records.next()
+        for alignment in blast_record.alignments:
+            for hsp in alignment.hsps:
+                #if hsp.expect < 5:
+                print "***** RECORD ****"
+                    #print "sequence:", alignment.title
+                print "E-value:", hsp.expect
+                
+def blast2seq():
+    
+    import os
+    import commands
+    
+    os.chdir('/home/yqian33/APPI/dataset/ProteinSequences')
+    #result = os.popen('time blastp -query seq1.fasta -subject seq2.fasta')
+    result = os.popen('time blastp  -query Yiwei_Yeast_protensemble.fas -subject SGD_orf_trans_all.fasta -out result.txt')
+    #result = os.popen('time blastp  -query seq2.fasta -subject seq1.fasta')
+    print result.read()
+
+    result.close()
+    #for line in result:
+        #print line
+
+def countProtein():
+    ins = open('/home/yqian33/APPI/dataset/AlignMCLdataset/ort/human-fly.ort', 'r')  #14615
+    out = open("human_proteinSeq.txt", "w")
+    #ins = open('/home/yqian33/APPI/dataset/AlignMCLdataset/ppi/human.all.nif', 'r')
+    
+    count = 0;
+    preProtein = ''
+    for line in ins:
+        eachLine = line.split('\t')
+        #print preProtein != eachLine[0]
+        if preProtein != eachLine[0]:
+            out.write(eachLine[0]+'\n')
+            count = count + 1
+        preProtein = eachLine[0]
+        #print preProtein
+    print count
+    ins.close()
+    out.close()
+
+
+  
+def countProteinInFasta():
+    #human(H.s) protein
+    #ins = open('/home/yqian33/APPI/dataset/ProteinSequences/uniprot-human+protein.fasta', 'r')                 #1282097
+    #ins = open('/home/yqian33//APPI/dataset/ProteinSequences/Ensembl_Homo_sapiens.GRCh37.75.pep.all.fa', 'r')  #104763
+    
+    #yeast(S.c) protein  - near 6700
+    #ins = open('/home/yqian33/APPI/dataset/ProteinSequences/SGD_orf_trans_all.fasta', 'r')                                  #6717
+    #ins = open('/home/yqian33/APPI/dataset/Yiwei_Yeast_protensemble.fas', 'r')                                               #6692
+    #ins = open('/home/yqian33/APPI/dataset/ProteinSequences/Ensembl_Saccharomyces_cerevisiae.R64-1-1.75.pep.all.fa', 'r')   #6692
+    #ins = open('/home/yqian33/APPI/dataset/ProteinSequences/uniprot-yeast4932.fasta', 'r')   #7802
+    
+    #full DIP
+    #ins = open('/home/yqian33/APPI/dataset/ProteinSequences/DIP_fasta20131201.seq', 'r')     #25749
+    
+    #fly(D.m) protein
+    #ins = open('/home/yqian33/APPI/dataset/ProteinSequences/Ensembl_Drosophila_melanogaster.BDGP5.75.pep.all.fa', 'r')         #26950
+    #ins = open('/home/yqian33/APPI/dataset/ProteinSequences/Ensembl_Drosophila_melanogaster.BDGP5.75.pep.abinitio.fa', 'r')     #41246
+    ins = open('/home/yqian33/APPI/dataset/ProteinSequences/uniprot-fly7215.fasta', 'r')   #5073
+    
+    #worm(C.e) protein
+    #ins = open('/home/yqian33/APPI/dataset/ProteinSequences/Wormbase_C_Elegans.PRJNA13758.WS241.protein.fa', 'r')     #26983
+    
+    count = 0;
+    for line in ins:
+        #eachLine = line.split('\t')
+        #print preProtein != eachLine[0]
+        if line[0] =='>':
+            #print 'here'
+            count = count + 1
+        #print preProtein
+    print count
+    ins.close()
+            
+if __name__ == '__main__':
+    #pass
+    #blast2seq();
+    #proteinEvalue()
+    #countProtein()
+    countProteinInFasta()
+    #getEntrezIdFromSeq()

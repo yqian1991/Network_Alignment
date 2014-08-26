@@ -1,0 +1,16 @@
+
+**** Build of configuration Debug for project Extern ****
+
+make all 
+Building file: ../src/test1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test1.d" -MT"src/test1.d" -o "src/test1.o" "../src/test1.cpp"
+Finished building: ../src/test1.cpp
+ 
+Building target: Extern
+Invoking: GCC C++ Linker
+g++  -o "Extern"  ./src/main.o ./src/test1.o   
+Finished building target: Extern
+ 
+
+**** Build Finished ****

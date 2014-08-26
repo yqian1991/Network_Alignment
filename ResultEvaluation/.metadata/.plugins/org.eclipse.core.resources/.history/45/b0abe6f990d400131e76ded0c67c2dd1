@@ -1,0 +1,222 @@
+/*
+ * def.cpp
+ *
+ *  Created on: May 5, 2014
+ *      Author: yqian33
+ */
+#include "def.h"
+
+int buildProMap(string infile, map <int, string> & proMap)
+{
+	ifstream input;
+	input.open(infile.c_str());
+	if (!input.is_open())
+	{
+		cout <<"Open File"<<infile<<" Error"<<endl;
+		return 0;
+	}
+	string line;
+	unsigned int pid = 0;
+	string protein="start";
+	while ( getline(input, line))
+	{
+
+		vector<string> strsplit = split(line, pattern);
+		unsigned int cid = atoi(strsplit[0].c_str());
+
+		string pro = strsplit[1];
+		//cout << "pro: "<<pro << endl;
+		if( pid != cid)//write a new protein
+		{
+			//cout << protein << endl;
+			proMap[pid]=protein;
+			//protein = " ";
+			//protein.append("\t"+pro);
+			protein=pro;
+		}
+		else
+		{
+			protein.append(" "+pro);
+		}
+		pid = cid;
+	}
+	input.close();
+
+	return 1;
+
+}
+
+int overlap(string infile, map <int, string> & proMap, string outfile)
+{
+	ifstream input;
+	ofstream output;
+	output.open(outfile.c_str());
+
+	input.open(infile.c_str());
+	if( !input.is_open())
+	{
+		cout <<"Open File"<<infile<<" Error"<<endl;
+		return 0;
+	}
+
+	string line;
+	int line_count=0;
+	int sol_count=0;
+	int highsol_count=0;
+
+	//int l_count=0;
+	//int g_count=0;
+	while ( getline(input, line))
+	{
+		bool flag=false;
+		bool score_flag=false;
+		line_count++;
+		string spe_pro="";
+		vector<string> pro_pair = split(line, pattern);
+		for(unsigned int i=0; i<pro_pair.size(); i++)
+		{
+			vector<string> single_pair= split(pro_pair[i], "/");
+			if (!exist(single_pair[0], spe_pro))
+			{
+				spe_pro.append(" "+single_pair[0]);
+			}
+		}
+		//repeat mask spe_pro
+		//cout << spe_pro << endl;
+		int TP_count=0;
+		map<int, string>::iterator it = proMap.begin();
+		it++;
+		for(; it != proMap.end(); it++)
+		{
+			vector<string> subject = split(it->second, " ");
+			vector<string> query = split(spe_pro, " ");
+			if (subject.size()>4)
+			{
+			for(unsigned int i=0; i<query.size(); i++)
+			{
+				for(unsigned int j=0; j<subject.size(); j++)
+				{
+					if (query[i] == subject[j])
+					{
+						TP_count++;
+					}
+				}
+			}
+			//pi, ro, F-index
+			if (TP_count!=0)
+			{
+
+				double pi = (double)TP_count/query.size();
+				double ro = (double)TP_count/subject.size();
+				double f_score = (double)2*pi*ro/(pi+ro);
+				//cout << f_score << endl;
+				if (f_score - 0.3 >0)
+				{
+					//g_count ++;
+					score_flag = true;
+				}
+				else
+				{
+					//l_count++;
+				}
+				//id in So:line_count  id in known complex: it->first
+/*				ostringstream oss;
+				oss << line_count;
+
+				ostringstream oss1;
+				oss1 << it->first;
+
+				ostringstream oss2;
+				oss2 << f_score;*/
+				output << line_count << " " << it->first << " " << f_score<< " "<< query.size() << " " <<subject.size()<< " " << TP_count<< endl;
+				flag=true;
+
+				//cout << l_count << " " << g_count << endl;
+			}
+			}
+		}
+		if (flag)
+		{
+			sol_count++;
+		}
+		if (score_flag)
+		{
+			highsol_count++;
+		}
+	}
+	cout << "Matched solutions:"<< sol_count<<endl;
+	cout << "High quality solutions:"<< highsol_count<<endl;
+	input.close();
+	output.close();
+	return 1;
+}
+
+bool exist(string single_pair, string spe_pro)
+{
+	bool flag = false;
+    vector<string> str = split(spe_pro, " ");
+    for (int i=0; i<str.size(); i++)
+    {
+    	if(single_pair == spe_pro[i])
+    	{
+    		flag = true;
+    	}
+    }
+	return flag;
+
+}
+
+int find_overlap(string spe_pro, map <int, string> & proMap)
+{
+	int count=0;
+
+	map<int, string>::iterator it = proMap.begin();
+	it++;
+	for(; it != proMap.end(); it++)
+	{
+		vector<string> subject = split(it->second, " ");
+		vector<string> query = split(spe_pro, " ");
+		for(int i=0; i<query.size(); i++)
+		{
+			for(int j=0; j<subject.size(); j++)
+			{
+				if (query[i] == subject [j])
+				{
+					count++;
+
+				}
+			}
+		}
+
+	}
+	return count;
+
+}
+void printMap(map <int, string> & proMap)
+{
+	map<int, string>::iterator it = proMap.begin();
+	for(; it != proMap.end(); it++)
+	{
+		cout<<it->first<<'\t'<<it->second<<endl;
+	}
+}
+
+vector<string> split(string str, string pattern)
+{
+     string::size_type pos;
+     vector<string> result;
+     str+=pattern;//扩展字符串以方便操作
+     int size=str.size();
+
+     for(int i=0; i<size; i++)
+     {
+         pos=str.find(pattern,i);
+         if(pos<size)
+         {
+             string s=str.substr(i,pos-i);
+             result.push_back(s);
+             i=pos+pattern.size()-1;
+         }
+     }
+     return result;
+}

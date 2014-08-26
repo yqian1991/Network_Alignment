@@ -1,0 +1,54 @@
+/*
+ * Test.cpp
+ *
+ *  Created on: May 5, 2014
+ *      Author: yqian33
+ */
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "def.h"
+#include "auxilliary.h"
+
+using namespace std;
+
+int main(void)
+{
+/*	map <int, string> proMap = map <int, string> ();
+	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/yeast.txt";
+	//string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/testfly.txt";
+	if (buildComplexMap(infile, proMap))
+	{
+		cout << "done" <<endl;
+	}
+
+	//printMap(proMap);
+
+	string infile1="/home/yqian33/APPI/software/AlignMCL-1.2/alignments/AlignMCL/fly.i2d-yeast.i2d.txt";
+	//string infile1="/home/yqian33/APPI/software/AlignMCL-1.2/alignments/AlignMCL/test.txt";
+	string outfile="/home/yqian33/workspace/PPIDataProcess/ResultEvaluation/fly-yeast-i2d_yeast_complex.txt";
+	if ( overlap(infile1, proMap,  outfile) )
+	{//consistent with the result in known_complexes_overlap/single_PPIs/AlignMCL_overlap.txt
+		cout << "done!" << endl;
+	}*/
+
+	map <int, string> complexMap = map <int, string> ();
+	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/fly.txt";
+	//string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/testfly.txt";
+	if (buildComplexMap(infile, complexMap))
+	{
+		cout << "done" <<endl;
+	}
+
+	map <int, string> proMap = map <int, string> ();
+	string infile="/home/yqian33/APPI/software/AlignMCL-1.2/alignments/AlignMCL/fly.i2d-yeast.i2d.txt";
+	if (buildSolMap(infile, proMap))
+	{
+		cout << "done" <<endl;
+	}
+
+	//statistic_known();
+}
+
+

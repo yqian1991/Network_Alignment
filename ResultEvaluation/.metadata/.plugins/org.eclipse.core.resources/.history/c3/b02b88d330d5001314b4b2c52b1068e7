@@ -1,0 +1,31 @@
+/*
+ * auxilliary.cpp
+ *
+ *  Created on: May 6, 2014
+ *      Author: yqian33
+ */
+
+
+
+#include "auxilliary.h"
+#include "def.h"
+
+using namespace std;
+
+void statistic_known(string infile)
+{
+	ifstream input;
+	input.open("");
+
+	string line;
+	int count = 0;
+	while( getline(input, line))
+	{
+		vector<string> stritem = split(line, "\t");
+		if (stritem[0] == "fly.i2d-yeast.i2d_fly")
+		{
+			if ()
+		}
+
+	}
+}

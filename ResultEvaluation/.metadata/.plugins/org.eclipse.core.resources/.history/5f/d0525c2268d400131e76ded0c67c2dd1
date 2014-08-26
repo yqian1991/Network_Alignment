@@ -1,0 +1,34 @@
+/*
+ * Test.cpp
+ *
+ *  Created on: May 5, 2014
+ *      Author: yqian33
+ */
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "def.h"
+
+using namespace std;
+
+int main(void)
+{
+	map <int, string> proMap = map <int, string> ();
+	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/fly.txt";
+	if (buildProMap(infile, proMap))
+	{
+		cout << "done" <<endl;
+	}
+
+	//cout << proMap[4] << endl;
+	map<int, string>::iterator it = proMap.begin();
+	it = it +4;
+	cout<<it->first<<":"<<it->second<<endl;
+/*	for(; it != proMap.end(); it++)
+	{
+		cout<<it->first<<'\t'<<it->second<<endl;
+	}*/
+}
+
+

@@ -1,0 +1,24 @@
+/*
+ * Test.cpp
+ *
+ *  Created on: May 5, 2014
+ *      Author: yqian33
+ */
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "def.h"
+
+using namespace std;
+
+int main(void)
+{
+	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/fly.txt";
+	if (buildProMap(infile))
+	{
+		cout << "done" <<endl;
+	}
+}
+
+

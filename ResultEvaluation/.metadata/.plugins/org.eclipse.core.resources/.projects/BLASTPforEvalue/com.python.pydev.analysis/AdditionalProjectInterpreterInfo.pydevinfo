@@ -1,0 +1,52 @@
+-- VERSION_4
+-- START DISKCACHE
+/home/yqian33/workspace/PPIDataProcess/.metadata/.plugins/org.eclipse.core.resources/.projects/BLASTPforEvalue/com.python.pydev.analysis/v2_indexcache
+org.blast.idmap.yeast_idmap|1396996245000|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/idmap/yeast_idmap.py
+org.blast.idmap.fly_idmap|1396984871000|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/idmap/fly_idmap.py
+org.__init__|1394650331000|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/__init__.py
+org.blast.evalue.searchEvalue|1398431178000|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/evalue/searchEvalue.py
+org.blast.evalue.__init__|1394650331000|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/evalue/__init__.py
+org.blast.__init__|1394650331000|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/__init__.py
+org.blast.evalue.idmapping|1398198645000|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/evalue/idmapping.py
+org.blast.idmap.__init__|1396977263000|/home/yqian33/workspace/PPIDataProcess/BLASTPforEvalue/src/org/blast/idmap/__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+6
+4=org.blast.idmap.yeast_idmap
+3=org.blast.idmap.fly_idmap
+1=org.blast.evalue.searchEvalue
+6=Protein.__init__
+2=org.blast.evalue.idmapping
+5=Protein
+-- END DICTIONARY
+-- START TREE 1
+21
+bla|1|blast2seq!10@
+cle|1|cleanE!10@
+cou|2|countProteinInFasta!10@countProtein!10@
+ent|1|entrezorthlog!18@
+exi|1|existed!18@
+ext|1|extractIDFromDIPOT!18@
+fin|2|findUniprotAC!26@findUniprotAC!34@
+fla|1|flag!19@
+fly|1|flyidmap!26@
+get|2|getGIFromNcbi!18@getEntrezIdFromSeq!18@
+ide|1|idExisted!18@
+idm|1|idmapping!18@
+map|5|mapYeastSeqName!34@mapFlySeqName!26@map1!18@mapGid2Uac!18@map!18@
+num|1|num!19@
+po|1|po!19@
+pro|3|Protein!17@proteinEvalue!10@proteinMask!18@
+raw|2|rawUniprotGid!34@rawUniprotGid!26@
+rep|1|repeatMask!18@
+sea|2|searchAC!18@searchMapFile!18@
+sub|2|substituteUniprotAC!34@substitiuteUniprotAC!26@
+yea|1|yeastidmap!34@
+-- END TREE
+-- START TREE 2
+4
+__d|1|__del__!5&18@
+__i|1|__init__!5&18@
+ent|1|entrezid!6&19@
+uni|1|uniprotac!6&19@
+-- END TREE
