@@ -115,23 +115,36 @@ void testAlignMCL()
 {
 	cout<<"**************************************TEST AlignMCL*********************************\n";
 	map <int, string> complexMap = map <int, string> ();
-	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/yeast.txt";
+	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/fly.txt";
+
+	map <int, string> complexMap2 = map <int, string> ();
+	string infile2 = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/yeast.txt";
 	if (buildComplexMap(infile, complexMap))
 	{
 		cout << "Known complexes map constructed！" <<endl;
 	}
+	if (buildComplexMap(infile2, complexMap2))
+	{
+		cout << "Known complexes map constructed！" <<endl;
+	}
 
-
-	string dir="/home/yqian33/APPI/verify_alignment_after_interaction_added/AlignMCL/fly-yeast-dip-fly1000/";
+	string dir="/home/yqian33/APPI/verify_alignment_after_interaction_added/AlignMCL/testremove/fly-yeast-rm10000/11/";
 	map <int, string> proMap = map <int, string> ();
 	string infile1=dir+"fly-yeast.txt";
-	if (buildSolMap(infile1, proMap, 1))
+	if (buildSolMap(infile1, proMap, 0))
 	{
 		cout << "Solutions map constructed！" <<endl;
 	}
 
-	string outfile =dir+"fly-yeast_yeast_overlap_sol.txt";
-	string outfile1=dir+"fly-yeast_yeast_overlap_complex.txt";
+	map <int, string> proMap2 = map <int, string> ();
+	//string infile1=dir+"fly-yeast.txt";
+	if (buildSolMap(infile1, proMap2, 1))
+	{
+		cout << "Solutions map constructed！" <<endl;
+	}
+
+	string outfile =dir+"fly-yeast_fly_overlap_sol.txt";
+	string outfile1=dir+"fly-yeast_fly_overlap_complex.txt";
 	string prefix=" ";
 	if (overlap_Solution(proMap, complexMap, outfile, prefix, 3))
 	{
@@ -141,7 +154,22 @@ void testAlignMCL()
 	{
 		cout << "Finished!"<<endl;
 	}
-	cout<<"**************************************TEST AlignMCL*********************************\n";
+
+	string outfile_1 =dir+"fly-yeast_yeast_overlap_sol.txt";
+	string outfile1_1=dir+"fly-yeast_yeast_overlap_complex.txt";
+	//string prefix=" ";
+	if (overlap_Solution(proMap2, complexMap2, outfile_1, prefix, 3))
+	{
+		cout << "Finished!"<<endl;
+	}
+	if (overlap_Complex(proMap2, complexMap2, outfile1_1, prefix, 3))
+	{
+		cout << "Finished!"<<endl;
+	}
+
+
+
+	cout<<"**************************************Done*********************************\n";
 }
 void testMAWISH()
 {
@@ -230,9 +258,9 @@ void testNetAligner()
 }
 int main(void)
 {
-	testNetworkblast();
+	//testNetworkblast();
 	//testMAWISH();
-	//testAlignMCL();
+	testAlignMCL();
 
 
 	//testNetworkblastSS();
