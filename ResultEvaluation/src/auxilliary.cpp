@@ -16,7 +16,7 @@ void statistic_known( )
 {
 	ifstream input;
 	//input.open("/home/yqian33/APPI/software/AlignMCL-1.2/results/SS_scores/intra.ss.SimGIC.AlignMCL");
-	input.open("/home/yqian33/APPI/software/AlignMCL-1.2/results/known_complexes_overlap/single_PPIs/AlignMCL_overlap.txt");
+	input.open("/home/yqian33/APPI/software/AlignMCL-1.2/results/known_complexes_overlap/merged_PPIs/AlignMCL_overlap.txt");
 	string line;
 	int count = 0;
 	int count1 = 0;
@@ -24,15 +24,15 @@ void statistic_known( )
 	while( getline(input, line))
 	{
 		vector<string> stritem = split(line, "\t");
-		if (stritem[0] == "fly.i2d-yeast.i2d_yeast")
+		if (stritem[0] == "fly.all-yeast.all_fly")
 		{
 			count++;
 			double f_score = atof(stritem[6].c_str());
-			if (f_score - 0.3 > 0 )
+			if (f_score - 0.3 >= 0 )
 			{
 				count1++;
 			}
-			if (f_score - 0.5 > 0 )
+			if (f_score - 0.5 >= 0 )
 			{
 				count2++;
 			}

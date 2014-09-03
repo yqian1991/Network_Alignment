@@ -128,7 +128,8 @@ void testAlignMCL()
 		cout << "Known complexes map constructed！" <<endl;
 	}
 
-	string dir="/home/yqian33/APPI/verify_alignment_after_interaction_added/AlignMCL/testremove/fly-yeast-rm10000/11/";
+	string dir="/home/yqian33/APPI/verify_alignment_after_interaction_added/AlignMCL/fly-yeast-dip-i2d-test/fly-yeast-add5000-1/";
+
 	map <int, string> proMap = map <int, string> ();
 	string infile1=dir+"fly-yeast.txt";
 	if (buildSolMap(infile1, proMap, 0))
@@ -175,16 +176,16 @@ void testMAWISH()
 {
 	cout<<"**************************************TEST MaWish*********************************\n";
 
-	string dir="/home/yqian33/Downloads/MAWISH/data/alignment/";
+	string dir="/home/yqian33/APPI/software/MAWISH/data/alignment/";
 	map <int, string> complexMap = map <int, string> ();
-	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/yeast.txt";
+	string infile = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/fly.txt";
 	if (buildComplexMap(infile, complexMap))
 	{
 		cout << "Known complexes map constructed！" <<endl;
 	}
 
 	map <int, string> complexMap2 = map <int, string> ();
-	string infile2 = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/worm.txt";
+	string infile2 = "/home/yqian33/APPI/software/AlignMCL-1.2/protein_complexes/yeast.txt";
 	if (buildComplexMap(infile2, complexMap2))
 	{
 		cout << "Known complexes map2 constructed！" <<endl;
@@ -192,7 +193,7 @@ void testMAWISH()
     //---------------
 
 	map <int, string> proMap = map <int, string> ();
-	string infile1=dir+"49323_62392.txt";
+	string infile1=dir+"72271_49321.txt";
 	if (buildSolMap(infile1, proMap, 0))
 	{
 		cout << "Solutions map constructed！" <<endl;
@@ -206,8 +207,8 @@ void testMAWISH()
 
 	//----
 
-	string outfile =dir+"yeast-worm_yeast_overlap_sol.txt";
-	string outfile1=dir+"yeast-worm_yeast_overlap_comp.txt";
+	string outfile =dir+"fly_overlap_sol.txt";
+	string outfile1=dir+"fly_overlap_comp.txt";
 	string prefix="";
 	if (overlap_Solution(proMap, complexMap, outfile, prefix, 3))
 	{
@@ -218,8 +219,8 @@ void testMAWISH()
 		cout << "Finished!"<<endl;
 	}
 
-	/*string outfile_1 =dir+"yeast-worm_worm_overlap_sol.txt";
-	string outfile1_1=dir+"yeast-worm_worm_overlap_comp.txt";
+	string outfile_1 =dir+"yeast_overlap_sol.txt";
+	string outfile1_1=dir+"yeast_overlap_comp.txt";
 	if (overlap_Solution(proMap2, complexMap2, outfile_1, prefix, 3))
 	{
 		cout << "Finished!"<<endl;
@@ -227,7 +228,7 @@ void testMAWISH()
 	if (overlap_Complex(proMap2, complexMap2, outfile1_1, prefix, 3))
 	{
 		cout << "Finished!"<<endl;
-	}*/
+	}
 
 	//string gofile="/home/yqian33/APPI/ProSeqBla/idmapfile/DROME_7227_idmapping_selected.tab";
 	/*string gofile="/home/yqian33/APPI/software/AlignMCL-1.2/alignments/fastSemSim-0.8.1/test/data/ACs/gene_association.goa_yeast";
@@ -286,7 +287,7 @@ void testNetAligner()
 int main(void)
 {
 	//testNetworkblast();
-	testMAWISH();
+	//testMAWISH();
 	//testAlignMCL();
 
 
@@ -294,7 +295,7 @@ int main(void)
 	//testSSforBP();
 	//testAlignMCL_GA();
 	//test();
-	//statistic_known( );
+	statistic_known( );
 	//testNetAligner();
 
 	return 0;
