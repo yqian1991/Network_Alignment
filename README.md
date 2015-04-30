@@ -1,3 +1,3 @@
 Network_Alignment
 =================
-Graduate Project
+Thesis Project
