@@ -5,6 +5,7 @@
 *.obj
 Debug/
 Release/
+.metadata
 
 # Precompiled Headers
 *.gch
